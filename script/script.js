@@ -40,4 +40,25 @@ if (btnCaptura) {
     btnCaptura.addEventListener("click", () => {
         window.location.href = "organize.html";
     });
-} 
+}
+
+const btnCamera = document.getElementById("btn-camera");
+if (btnCamera) {
+    btnCamera.addEventListener("click", () => {
+        window.location.href = "cam.html";
+    });
+}
+
+const btnCategoria = document.querySelectorAll(".categoria");
+if (btnCategoria) {
+    btnCategoria.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            alert("Categoria adicionada com sucesso!")
+
+            setTimeout(() => {
+                window.location.href = "cam.html";
+            })
+            
+        });
+    });
+}
