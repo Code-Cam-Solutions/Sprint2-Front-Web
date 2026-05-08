@@ -9,7 +9,7 @@
 <body>
     <section class="tela celular">
             <header class="topo">
-                <button class="voltar" id="btn-voltar">←</button>
+                <button class="voltar" id="btn-voltar"> <img src="../assets/back.svg" alt=""></button>
                 <div>
                     <h2>CodeCam Solutions</h2>
                     <p>Transformando estudos com IA</p>
@@ -17,27 +17,29 @@
             </header>
 
             <nav class="abas">
-                <button class="aba ativa">Perguntas</button>
-                <button class="aba">Câmera</button>
+                <button class="aba" id="btn-camera">Câmera</button>
+                <button class="aba ativa">Organizar</button>
             </nav>
 
             <section class="categorias">
-                <input type="text" placeholder="Pesquisar categoria">
+                <p>Inclua em uma categoria:</p>
+                <input type="text" placeholder="Pesquisar">
+                
 
                 <div class="lista-categorias">
-                    <button>Biologia</button>
-                    <button>Fotossíntese</button>
-                    <button>Desenvolvimento</button>
-                    <button>Matemática</button>
+                    <button class="categoria">Biologia</button>
+                    <button class="categoria">Fotossíntese</button>
+                    <button class="categoria">Desenvolvimento</button>
+                    <button class="categoria">Matemática</button>
                 </div>
             </section>
 
             <section class="favoritos">
-                <h3>Mais acessados</h3>
+                <h3>Ações inteligentes</h3>
 
                 <div class="cards-favoritos">
                     <article class="favorito-card">
-                        <h4>Mapa Mental</h4>
+                        <h4>Gerar Resumo</h4>
                         <p>Resumo rápido</p>
                     </article>
 
@@ -47,7 +49,7 @@
                     </article>
 
                     <article class="favorito-card">
-                        <h4>Flash Cards</h4>
+                        <h4>Criar Flash Cards</h4>
                         <p>Revisão dinâmica</p>
                     </article>
                 </div>
