@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeCam Solutions</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <section class="celular">
+    <header class="topo">
+      <button class="voltar" id="btn-summary-voltar">&#8249;</button>
+      <div>
+        <h2>CodeCam Solutions ✦</h2>
+        <p>Transforme sua anotação em conteúdo de estudo</p>
+      </div>
+    </header>
+
+    <nav class="abas summary-abas">
+      <button class="aba ativa">ORGANIZAR</button>
+      <button class="aba" id="btn-camera">CÂMERA</button>
+    </nav>
+
+    <main class="conteudo-resumo">
+      <div class="titulo-secao summary-titulo">
+        <span>📄</span>
+        <p>Gerar resumo</p>
+      </div>
+
+      <form id="summary-form" class="input-area summary-input">
+        <input type="text" placeholder="Digite o assunto desejado" id="summary-input">
+        <button type="submit" class="btn-enviar">➤</button>
+      </form>
+
+      <div class="caixa-resumo"></div>
+    </main>
+  </section>
+
+  <script src="../script/script.js"></script>
+</body>
+</html>
