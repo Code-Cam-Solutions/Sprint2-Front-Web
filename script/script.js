@@ -62,3 +62,27 @@ if (btnCategoria) {
         });
     });
 }
+
+const btnResumo = document.getElementById("resumo-card");
+if (btnResumo) {
+    btnResumo.addEventListener("click", () => {
+        window.location.href = "summary.html";
+    });
+}
+
+const btnBacktoOrganize = document.getElementById("btn-summary-voltar");
+if (btnBacktoOrganize) {
+    btnBacktoOrganize.addEventListener("click", () => {
+        window.location.href = "organize.html";
+    });
+}
+
+const summaryForm = document.getElementById("summary-form");
+if (summaryForm) {
+    summaryForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Recurso não está disponível no momento.");
+
+        summaryForm.reset()
+    });
+}
