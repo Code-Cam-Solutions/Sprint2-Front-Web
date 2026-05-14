@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcrição · CodeCam Solutions</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <section class="tela celular">
+
+        <header class="topo">
+            <button class="voltar" id="btn-fechar">
+                <img src="../assets/back.svg" alt="Fechar">
+            </button>
+            <div>
+                <h2>CodeCam Solutions</h2>
+                <p>Transformando estudos com IA</p>
+            </div>
+        </header>
+
+        <nav class="abas">
+            <button class="aba" id="btn-organizar">Organizar</button>
+            <button class="aba ativa">Transcrição</button>
+        </nav>
+
+        <div class="conteudo-transcricao">
+
+            <section class="secao-card">
+                <h3 class="secao-titulo">Transcrição em tempo real</h3>
+                <div class="card-transcricao">
+                    <p class="texto-transcricao" id="texto-transcricao"></p>
+                    <button class="btn-audio" id="btn-audio" title="Ouvir transcrição">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <section class="secao-card">
+                <h3 class="secao-titulo">Anotações Rápidas</h3>
+                <div class="card-anotacoes">
+                    <ul class="lista-anotacoes" id="lista-anotacoes"></ul>
+                    <div class="miniatura-foto">
+                        <img src="../assets/foto-exemplo.png" alt="Foto capturada">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="rodape-transcricao">
+            <button class="btn-rodape-icone" title="Microfone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4M12 3a4 4 0 014 4v4a4 4 0 01-8 0V7a4 4 0 014-4z"/>
+                </svg>
+            </button>
+            <button class="btn-rodape-icone" title="Anexar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
+                </svg>
+            </button>
+            <button class="btn-rodape-roxo" id="btn-ir-organizar" title="Organizar">+</button>
+        </div>
+
+    </section>
+
+    <script src="../script/script.js"></script>
+</body>
+</html>
