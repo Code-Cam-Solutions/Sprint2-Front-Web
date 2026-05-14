@@ -236,3 +236,129 @@ if (btnCameraTopicos) {
         window.location.href = "cam.html";
     });
 }
+
+const topicosSend = document.getElementById("topicos-send");
+if (topicosSend) {
+    const topicosInput    = document.getElementById("topicos-input");
+    const topicosConteudo = document.getElementById("topicos-conteudo");
+    const topicosRodape   = document.getElementById("topicos-rodape");
+
+    const dadosTopicos = [
+        {
+            emoji: "🌿",
+            titulo: "O que são as gimnospermas?",
+            itens: [
+                "Plantas que produzem sementes 'nuas', sem fruto",
+                "Não têm flores de verdade 🌸",
+                "As sementes ficam em estruturas chamadas cones (ou estróbilos)",
+            ]
+        },
+        {
+            emoji: "♻️",
+            titulo: "Como elas se reproduzem?",
+            itens: [
+                { texto: "Usam o vento para transportar o pólen", subitens: [] },
+                {
+                    texto: "Possuem:",
+                    subitens: [
+                        "🌲 Cones masculinos → produzem pólen",
+                        "🌲 Cones femininos → formam as sementes",
+                    ]
+                },
+                "Não precisam de água para a fecundação 💧",
+            ]
+        },
+        {
+            emoji: "🌲",
+            titulo: "Características principais",
+            itens: [
+                "Têm vasos condutores (xilema e floema) 🌿",
+                "Geralmente são árvores grandes e duradouras 🏔️",
+                {
+                    texto: "Folhas em forma de:",
+                    subitens: [
+                        "Agulha (tipo pinheiro)",
+                        "Escamas",
+                    ]
+                },
+                {
+                    texto: "Adaptadas a:",
+                    subitens: [
+                        "❄️ Climas frios",
+                        "🏜️ Ambientes secos",
+                    ]
+                },
+            ]
+        },
+    ];
+
+    function criarBlocoTopico(dado, delay) {
+        const bloco = document.createElement("div");
+        bloco.className = "topicos-bloco";
+
+        const titulo = document.createElement("div");
+        titulo.className = "topicos-bloco-titulo";
+        titulo.innerHTML = `<span class="emoji">${dado.emoji}</span> ${dado.titulo}`;
+        bloco.appendChild(titulo);
+
+        const ul = document.createElement("ul");
+        ul.className = "topicos-lista";
+
+        dado.itens.forEach(item => {
+            const li = document.createElement("li");
+            if (typeof item === "string") {
+                li.textContent = item;
+            } else {
+                li.textContent = item.texto;
+                if (item.subitens && item.subitens.length) {
+                    const subUl = document.createElement("ul");
+                    item.subitens.forEach(sub => {
+                        const subLi = document.createElement("li");
+                        subLi.textContent = sub;
+                        subUl.appendChild(subLi);
+                    });
+                    li.appendChild(subUl);
+                }
+            }
+            ul.appendChild(li);
+        });
+
+        bloco.appendChild(ul);
+
+        const audioBtn = document.createElement("button");
+        audioBtn.className = "topicos-audio-btn flash-audio";
+        audioBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072"/>
+            </svg>`;
+        bloco.appendChild(audioBtn);
+
+        topicosConteudo.appendChild(bloco);
+        setTimeout(() => bloco.classList.add("visivel"), delay);
+    }
+
+    function mostrarTopicos() {
+        topicosConteudo.innerHTML = "";
+
+        const pensando = document.createElement("p");
+        pensando.className = "topicos-pensando";
+        pensando.textContent = "Pensando...";
+        topicosConteudo.appendChild(pensando);
+
+        setTimeout(() => {
+            topicosConteudo.innerHTML = "";
+            dadosTopicos.forEach((dado, i) => criarBlocoTopico(dado, i * 220));
+            topicosRodape.style.display = "flex";
+        }, 1500);
+    }
+
+    topicosSend.addEventListener("click", () => {
+        if (topicosInput.value.trim() !== "") mostrarTopicos();
+    });
+
+    topicosInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && topicosInput.value.trim() !== "") mostrarTopicos();
+    });
+}
