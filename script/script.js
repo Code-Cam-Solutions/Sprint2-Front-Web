@@ -120,3 +120,119 @@ if (btnAudio) {
         btnAudio.classList.toggle("tocando");
     });
 }
+
+const flashSend = document.getElementById("flash-send");
+if (flashSend) {
+    const flashInput    = document.getElementById("flash-input");
+    const flashConteudo = document.getElementById("flash-conteudo");
+    const flashRodape   = document.getElementById("flash-rodape");
+
+    const dadosFlash = [
+        { pergunta: "O que são gimnospermas?",                     resposta: "Plantas que produzem sementes 'nuas', sem fruto." },
+        { pergunta: "As gimnospermas possuem flores?",             resposta: "Não, elas formam estróbilos (cones)." },
+        { pergunta: "Como ocorre a reprodução das gimnospermas?",  resposta: "Principalmente pelo vento (polinização anemófila)." },
+        { pergunta: "Qual o agente polinizador das gimnospermas?", resposta: "Pelo vento (anemófila)." },
+    ];
+
+    function criarCardFlash(item, delay) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "flash-card-wrapper";
+
+        wrapper.innerHTML = `
+            <div class="flash-card-inner">
+                <div class="flash-card-frente pergunta">
+                    <p>${item.pergunta}</p>
+                    <button class="flash-audio">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flash-card-verso resposta">
+                    <p>${item.resposta}</p>
+                    <button class="flash-audio">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        `;
+
+        wrapper.addEventListener("click", () => {
+            wrapper.classList.toggle("virado");
+        });
+
+        flashConteudo.appendChild(wrapper);
+        setTimeout(() => wrapper.classList.add("visivel"), delay);
+    }
+
+    function mostrarFlashcards() {
+        flashConteudo.innerHTML = "";
+
+        const pensando = document.createElement("p");
+        pensando.className = "flash-pensando";
+        pensando.textContent = "Pensando...";
+        flashConteudo.appendChild(pensando);
+
+        setTimeout(() => {
+            flashConteudo.innerHTML = "";
+            dadosFlash.forEach((item, i) => criarCardFlash(item, i * 180));
+            flashRodape.style.display = "flex";
+        }, 1500);
+    }
+
+    flashSend.addEventListener("click", () => {
+        if (flashInput.value.trim() !== "") mostrarFlashcards();
+    });
+
+    flashInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && flashInput.value.trim() !== "") mostrarFlashcards();
+    });
+}
+
+const btnFlashcards = document.getElementById("btn-flashcards");
+if (btnFlashcards) {
+    btnFlashcards.addEventListener("click", () => {
+        window.location.href = "flashcards.html";
+    });
+}
+
+const btnVoltarFlash = document.getElementById("btn-voltar-flashcards");
+if (btnVoltarFlash) {
+    btnVoltarFlash.addEventListener("click", () => {
+        window.location.href = "organize.html";
+    });
+}
+
+const btnCameraFlash = document.getElementById("btn-camera-flash");
+if (btnCameraFlash) {
+    btnCameraFlash.addEventListener("click", () => {
+        window.location.href = "cam.html";
+    });
+}
+
+const btnTopicos = document.getElementById("btn-topicos");
+if (btnTopicos) {
+    btnTopicos.addEventListener("click", () => {
+        window.location.href = "topicos.html";
+    });
+}
+
+const btnVoltarTopicos = document.getElementById("btn-voltar-topicos");
+if (btnVoltarTopicos) {
+    btnVoltarTopicos.addEventListener("click", () => {
+        window.location.href = "organize.html";
+    });
+}
+
+const btnCameraTopicos = document.getElementById("btn-camera-topicos");
+if (btnCameraTopicos) {
+    btnCameraTopicos.addEventListener("click", () => {
+        window.location.href = "cam.html";
+    });
+}
