@@ -53,21 +53,29 @@
         </div>
 
         <div class="rodape-transcricao">
-            <button class="btn-rodape-icone" title="Microfone">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4M12 3a4 4 0 014 4v4a4 4 0 01-8 0V7a4 4 0 014-4z"/>
-                </svg>
+            <button class="btn-rodape-icone" title="Ouvir">
+               <img src="../assets/headphone-alt.svg" alt="">
             </button>
             <button class="btn-rodape-icone" title="Anexar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
-                </svg>
+                <img src="../assets/paperclip.svg" alt="">
             </button>
-            <button class="btn-rodape-roxo" id="btn-ir-organizar" title="Organizar">+</button>
+            <button class="btn-rodape-roxo" id="btn-salvar" title="Salvar"> <img src="../assets/save.svg" alt=""> </button>
+        </div>
+
+        
+        <div class="overlay-materias" id="overlay-materias"></div>
+        <div class="caixa-materias" id="caixa-materias">
+            <h3>Salvar em qual matéria?</h3>
+            <div class="lista-materias">
+                <button class="btn-materia" data-materia="História">História</button>
+                <button class="btn-materia" data-materia="Matemática">Matemática</button>
+                <button class="btn-materia" data-materia="Biologia">Biologia</button>
+            </div>
+        </div>
+
+        
+        <div class="popup-sucesso" id="popup-sucesso">
+            <p>Matéria adicionada com sucesso!</p>
         </div>
 
     </section>
