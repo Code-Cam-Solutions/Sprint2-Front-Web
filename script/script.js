@@ -43,6 +43,13 @@ if (btnCaptura) {
         window.location.href = "transcricao.html";
     });
 }
+
+const btnGallery = document.getElementById("btn-gallery");
+if (btnGallery) {
+    btnGallery.addEventListener("click", () => {
+        window.location.href = "gallery.html";
+    });
+}
 const btnTranscricao = document.getElementById("btn-transcricao");
 if (btnTranscricao) {
     btnTranscricao.addEventListener("click", () => {
