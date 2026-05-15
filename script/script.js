@@ -55,10 +55,41 @@ if (btnOrganizar) {
         window.location.href = "organize.html";
     });
 }
-const btnIrOrganizar = document.getElementById("btn-ir-organizar");
-if (btnIrOrganizar) {
-    btnIrOrganizar.addEventListener("click", () => {
-        window.location.href = "organize.html";
+const btnSalvar = document.getElementById("btn-salvar");
+if (btnSalvar) {
+    const caixaMaterias = document.getElementById("caixa-materias");
+    const overlayMaterias = document.getElementById("overlay-materias");
+    const popupSucesso = document.getElementById("popup-sucesso");
+
+    btnSalvar.addEventListener("click", () => {
+        caixaMaterias.classList.add("visivel");
+        overlayMaterias.classList.add("visivel");
+    });
+
+    
+    overlayMaterias.addEventListener("click", () => {
+        caixaMaterias.classList.remove("visivel");
+        overlayMaterias.classList.remove("visivel");
+    });
+
+    
+    const btnsMaterias = document.querySelectorAll(".btn-materia");
+    btnsMaterias.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const materia = btn.getAttribute("data-materia");
+            
+            
+            caixaMaterias.classList.remove("visivel");
+            overlayMaterias.classList.remove("visivel");
+
+            
+            popupSucesso.classList.add("visivel");
+
+            
+            setTimeout(() => {
+                window.location.href = "cam.html";
+            }, 1000);
+        });
     });
 }
 const btnCategoria = document.querySelectorAll(".categoria");

@@ -913,3 +913,118 @@ body {
 .topicos-conteudo::-webkit-scrollbar-thumb:hover {
     background: #8b5cf6;
 }
+
+.overlay-materias {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 98;
+}
+
+.caixa-materias {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111111;
+    border: 1px solid #2a2a2a;
+    border-radius: 18px;
+    padding: 20px;
+    z-index: 99;
+    display: none;
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.caixa-materias h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.lista-materias {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-materia {
+    background: #1a1a1a;
+    border: 1px solid #2d2d2d;
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-materia:hover {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+}
+
+.caixa-materias.visivel,
+.overlay-materias.visivel {
+    display: block;
+}
+
+
+.popup-sucesso {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1a1a1a;
+    border: 2px solid #8b5cf6;
+    border-radius: 16px;
+    padding: 16px 20px;
+    z-index: 100;
+    display: none;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+    animation: popupShow 0.3s ease-out;
+    max-width: calc(100% - 32px);
+    max-height: calc(100% - 32px);
+    width: auto;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+@keyframes popupShow {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.popup-sucesso p {
+    color: #8b5cf6;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.popup-sucesso.visivel {
+    display: block;
+}
