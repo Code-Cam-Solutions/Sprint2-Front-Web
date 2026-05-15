@@ -1029,7 +1029,6 @@ body {
     display: block;
 }
 
-/* Carousel / gallery styles (responsive to celular container) */
 .gallery {
     flex: 1;
     display: flex;
