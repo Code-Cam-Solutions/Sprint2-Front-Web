@@ -2,11 +2,19 @@
 
 ## 📌 Descrição do projeto
 
-O nosso projeto da **CodeCam Solutions** foi desenvolvido para auxiliar estudantes na organização e transformação de anotações em conteúdos de estudo de forma prática e intuitiva.
+O **CodeCam Solutions** é um projeto desenvolvido durante a **Sprint 2 do Challenge FIAP**, nas disciplinas de **Front-End** e **Web Development**. O principal objetivo do desafio é propor uma solução tecnológica inovadora para um problema real, utilizando conceitos de desenvolvimento web, experiência do usuário e organização colaborativa de software.
 
-A aplicação possui uma interface moderna e responsiva, permitindo que o usuário utilize recursos como câmera, categorização de conteúdos, geração de resumos e organização de materiais acadêmicos. O sistema busca unir produtividade e tecnologia em uma solução voltada para o ambiente educacional.
+Nosso projeto busca **redefinir a experiência do usuário com a câmera**, tendo como público-alvo estudantes que enfrentam dificuldades para organizar conteúdos anotados em sala de aula. A proposta da aplicação é transformar fotos de lousas e anotações em materiais de estudo organizados, acessíveis e inteligentes.
 
-O projeto foi desenvolvido durante as disciplinas de **Front-End** e **Web Development**, aplicando conceitos de desenvolvimento web, versionamento com Git/GitHub e organização de equipes utilizando GitHub Organizations.
+A plataforma permite que o usuário capture imagens de conteúdos acadêmicos e, após isso, realize uma transcrição automática das informações presentes na imagem. A partir dessa transcrição, o sistema pode gerar novos materiais de estudo com auxílio de inteligência artificial, como:
+
+- 📚 Resumos
+- 📝 Tópicos organizados
+- 🧠 Flashcards
+- 📂 Organização por matérias e pastas
+
+Além disso, os conteúdos podem ser armazenados de forma categorizada, facilitando revisões, consultas futuras e a criação de uma rotina de estudos mais eficiente.
+Dessa forma, o CodeCam Solutions une tecnologia, produtividade e educação em uma solução voltada para otimizar a vida acadêmica dos estudantes.
 
 ---
 
