@@ -54,13 +54,21 @@
         <div class="topicos-conteudo" id="topicos-conteudo"></div>
 
         <div class="flash-rodape" id="topicos-rodape" style="display:none;">
-            <button class="btn-rodape-icone" title="Opções">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M5 12h.01M12 12h.01M19 12h.01"/>
-                </svg>
-            </button>
+            <button class="btn-rodape-roxo" id="btn-salvar-topicos" title="Salvar"> <img src="../assets/save.svg" alt=""> </button>
+        </div>
+
+        <div class="overlay-materias" id="overlay-materias"></div>
+        <div class="caixa-materias" id="caixa-materias">
+            <h3>Salvar em qual matéria?</h3>
+            <div class="lista-materias">
+                <button class="btn-materia" data-materia="História">História</button>
+                <button class="btn-materia" data-materia="Matemática">Matemática</button>
+                <button class="btn-materia" data-materia="Biologia">Biologia</button>
+            </div>
+        </div>
+
+        <div class="popup-sucesso" id="popup-sucesso">
+            <p>Tópicos adicionados com sucesso!</p>
         </div>
 
     </section>

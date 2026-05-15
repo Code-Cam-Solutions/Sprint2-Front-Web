@@ -55,43 +55,47 @@ if (btnOrganizar) {
         window.location.href = "organize.html";
     });
 }
-const btnSalvar = document.getElementById("btn-salvar");
-if (btnSalvar) {
+function setupSalvarMateria(btnSalvarId) {
+    const btnSalvar = document.getElementById(btnSalvarId);
+    if (!btnSalvar) return;
+
     const caixaMaterias = document.getElementById("caixa-materias");
     const overlayMaterias = document.getElementById("overlay-materias");
     const popupSucesso = document.getElementById("popup-sucesso");
+
+    if (!caixaMaterias || !overlayMaterias || !popupSucesso) return;
 
     btnSalvar.addEventListener("click", () => {
         caixaMaterias.classList.add("visivel");
         overlayMaterias.classList.add("visivel");
     });
 
-    
     overlayMaterias.addEventListener("click", () => {
         caixaMaterias.classList.remove("visivel");
         overlayMaterias.classList.remove("visivel");
     });
 
-    
     const btnsMaterias = document.querySelectorAll(".btn-materia");
     btnsMaterias.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             const materia = btn.getAttribute("data-materia");
             
-            
             caixaMaterias.classList.remove("visivel");
-            overlayMaterias.classList.remove("visivel");
 
-            
             popupSucesso.classList.add("visivel");
 
-            
             setTimeout(() => {
+                overlayMaterias.classList.remove("visivel");
                 window.location.href = "cam.html";
             }, 1000);
         });
     });
 }
+
+setupSalvarMateria("btn-salvar");
+setupSalvarMateria("btn-salvar-topicos");
+setupSalvarMateria("btn-salvar-summary");
+setupSalvarMateria("btn-salvar-flashcards");
 const btnCategoria = document.querySelectorAll(".categoria");
 if (btnCategoria.length) {
     btnCategoria.forEach((btn) => {
