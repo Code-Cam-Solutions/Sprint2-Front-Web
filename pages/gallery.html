@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria · CodeCam Solutions</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <section class="tela celular">
+
+        <header class="topo">
+            <button class="voltar" id="btn-voltar-gallery">
+                <img src="../assets/back.svg" alt="Voltar">
+            </button>
+            <div>
+                <h2>Galeria</h2>
+                <p>Fotos da sala de aula</p>
+            </div>
+        </header>
+
+        <nav class="abas">
+            <button class="aba" id="btn-camera-from-gallery">Câmera</button>
+            <button class="aba ativa">Galeria</button>
+        </nav>
+
+        <div class="gallery">
+            <div class="carousel" id="carousel">
+                <button class="carousel-btn prev" id="prevBtn">‹</button>
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide"><img class="carousel-img" src="../assets/gimnospermas.png" alt="Foto 1"></div>
+                    <div class="carousel-slide"><img class="carousel-img" src="../assets/foto-exemplo.png" alt="Foto 2"></div>
+                    <div class="carousel-slide"><img class="carousel-img" src="../assets/bhaskara.png" alt="Foto 3"></div>
+                </div>
+                <button class="carousel-btn next" id="nextBtn">›</button>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        document.getElementById('btn-voltar-gallery').addEventListener('click', () => {
+            window.location.href = 'cam.html';
+        });
+        const btnCamera = document.getElementById('btn-camera-from-gallery');
+        if (btnCamera) btnCamera.addEventListener('click', () => window.location.href = 'cam.html');
+
+        (function(){
+            const track = document.getElementById('carouselTrack');
+            const slides = Array.from(track.children);
+            const prev = document.getElementById('prevBtn');
+            const next = document.getElementById('nextBtn');
+            let index = 0;
+
+            function update() {
+                const offset = -index * 100;
+                track.style.transform = `translateX(${offset}%)`;
+            }
+
+            prev.addEventListener('click', () => {
+                index = (index - 1 + slides.length) % slides.length;
+                update();
+            });
+            next.addEventListener('click', () => {
+                index = (index + 1) % slides.length;
+                update();
+            });
+
+            // keyboard
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prev.click();
+                if (e.key === 'ArrowRight') next.click();
+            });
+        })();
+    </script>
+
+</body>
+</html>
