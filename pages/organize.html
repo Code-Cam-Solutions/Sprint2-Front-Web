@@ -22,7 +22,7 @@
             </nav>
 
             <section class="categorias">
-                <p>Inclua em uma categoria:</p>
+                <p>Adicione em alguma matéria:</p>
                 <input type="text" placeholder="Pesquisar">
                 
 
@@ -35,24 +35,48 @@
             </section>
 
             <section class="favoritos">
-                <h3>Ações inteligentes</h3>
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="#8b5cf6" style="vertical-align:middle; margin-right:6px;">
+                        <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5Z"/>
+                    </svg>
+                    Crie:
+                </h3>
 
-                <div class="cards-favoritos">
-                    <button class="favorito-card" id="resumo-card">
-                        <h4>Gerar Resumo</h4>
-                        <p>Resumo rápido</p>
-                    </button>
+            <div class="cards-favoritos">
+                <button class="favorito-card" id="resumo-card">
+                    <div class="favorito-icone resumo-icone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h4>Gerar resumo</h4>
+                </button>
 
-                    <article class="favorito-card" id="btn-topicos">
-                        <h4>Criar Tópicos</h4>
-                        <p>Conteúdo simplificado</p>
-                    </article>
+    <button class="favorito-card" id="btn-topicos">
+        <div class="favorito-icone topicos-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 10h16M4 14h10"/>
+            </svg>
+        </div>
+        <h4>Criar tópicos</h4>
+    </button>
 
-                    <article class="favorito-card" id="btn-flashcards">
-                        <h4>Criar Flash Cards</h4>
-                        <p>Revisão dinâmica</p>
-                    </article>
-                </div>
+    <button class="favorito-card" id="btn-flashcards">
+        <div class="favorito-icone flashcards-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 7h18M3 12h18M3 17h18"/>
+            </svg>
+        </div>
+        <h4>Criar flashcards</h4>
+    </button>
+</div>
             </section>
         </section>
 
